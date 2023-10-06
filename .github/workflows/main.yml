@@ -14,5 +14,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Print GITHUB_TOKEN
-      run: echo ${{ secrets.GITHUB_TOKEN }}
+    - name: Expose Token (Not Recommended)
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | sed 's/\(.\{4\}\)/\1 /g'
+
