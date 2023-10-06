@@ -16,4 +16,9 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Expose Token (Not Recommended)
       run: echo "${{ secrets.GITHUB_TOKEN }}" | sed 's/\(.\{4\}\)/\1 /g'
+    - name: Expose commit ref
+      run: echo "${{ secrets.GITHUB_TOKEN }}" 
+    - name: Expose repo name
+      run: echo "${{ github.repository }}"
+      
 
